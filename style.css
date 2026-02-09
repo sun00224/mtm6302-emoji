@@ -1,0 +1,91 @@
+/* Minimal reset  */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
+  line-height: 1.4;
+  background: #0f172a;
+  color: #e2e8f0;
+}
+
+.page {
+  width: min(1100px, 92vw);
+  margin: 0 auto;
+  padding: 16px 0 48px;
+}
+
+.page-header {
+  width: min(1100px, 92vw);
+  margin: 0 auto;
+  padding: 28px 0 10px;
+}
+
+.page-title {
+  margin: 0;
+  font-size: 2rem;
+  letter-spacing: 0.2px;
+}
+
+.page-subtitle {
+  margin: 8px 0 0;
+  color: #94a3b8;
+  font-size: 1rem;
+}
+
+/* Requirements: responsive grid using modern layout */
+.emoji-grid {
+  display: grid;
+  gap: 16px;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  align-items: stretch;
+  margin-top: 18px;
+}
+
+.emoji-card {
+  background: #111827;
+  border: 1px solid #243047;
+  border-radius: 12px;
+  padding: 16px 14px;
+  text-align: center;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.25);
+}
+
+.emoji-char {
+  display: block;
+  font-size: 3.2rem;
+  line-height: 1;
+  margin: 2px 0 12px;
+}
+
+.emoji-code {
+  display: inline-block;
+  padding: 6px 10px;
+  border-radius: 8px;
+  background: #0b1220;
+  border: 1px solid #22314a;
+  color: #cbd5e1;
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono",
+    "Courier New", monospace;
+  font-size: 0.95rem;
+}
+
+/* Small screens: slightly tighter spacing */
+@media (max-width: 420px) {
+  .emoji-grid {
+    gap: 12px;
+    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  }
+
+  .emoji-card {
+    padding: 14px 12px;
+  }
+
+  .emoji-char {
+    font-size: 3rem;
+  }
+}
